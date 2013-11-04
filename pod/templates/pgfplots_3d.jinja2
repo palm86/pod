@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+%R^2: {{r2}}
+%R^2_adj: {{r2adj}}
+%SD: {{sd}}
+%Equation: {{expression}}
+
+% parameter definitions
+{% for p, v in zip(par, var) %}\def \{{p}}{{'{'}}{{v}}{{'}'}}
+{% endfor %}
+
+\begin{axis}[view={40}{40}, zlabel={{'{'}}{{zlabel}}{{'}'}}, ylabel={{'{'}}{{ylabel}}{{'}'}}, xlabel={{'{'}}{{xlabel}}{{'}'}}, {% if reverse_x %}x dir=reverse,{% endif %}{% if reverse_y %}y dir=reverse,{% endif %}]
+
+\addplot3[only marks, mark=*, blue] table[x={{ xcolumn }}, y={{ ycolumn }}, z={{ zcolumn }}] {{'{'}}{{ datafile }}{{'}'}};
+
+\addplot3[mesh, no marks, samples=30, domain=0:{{xdom}}, y domain=0:{{ydom}}, blue] {{'{'}}{{expression}}{{'}'}};
+
+\end{axis}
+\end{tikzpicture}

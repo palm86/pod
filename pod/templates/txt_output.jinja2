@@ -1,0 +1,8 @@
+R^2: {{r2}}
+R^2_adj: {{r2adj}}
+SD: {{sd}}
+Message: {{message}}
+Equation: {{equation}}
+{% for p, v, e in zip(par, var, err) -%}
+{{p}}={{v}}{{e}}
+{% endfor %}

@@ -1,0 +1,4 @@
+{{x_name}} {{y_name}} v
+{% for ds, dsy in zip(data_series, dsys) %}{% for x, z in zip(ds.x, ds.y) %}{{x}} {{dsy}} {{z}}
+{% endfor %}
+{% endfor %}

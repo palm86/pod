@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+%R^2: {{r2}}
+%R^2_adj: {{r2adj}}
+%SD: {{sd}}
+
+\begin{axis}[
+ylabel={{ ylabel }},
+xlabel= {{ xlabel }},
+axis x line=center,
+axis y line*=left,
+xticklabels={},
+ytick={{'{'}}-{{absmax}},{{absmax}}{{'}'}},
+ymax={{absmax}},
+ymin=-{{absmax}}
+]
+\addplot[only marks, mark=*, blue] table[x={{ xcolumn }},y={{ ycolumn }}] {{'{'}}{{ datafile }}{{'}'}};
+\end{axis}
+\end{tikzpicture}
